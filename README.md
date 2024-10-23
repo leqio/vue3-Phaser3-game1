@@ -1,6 +1,5 @@
 # Phaser Vue Template
 是一个vue3 + Phaser的项目
-
 This is a Phaser 3 project template that uses the Vue framework and Vite for bundling. It includes a bridge for Vue to Phaser game communication, hot-reloading for quick development workflow and scripts to generate production-ready builds.
 
 **[This Template is also available as a TypeScript version.](https://github.com/phaserjs/template-vue-ts)**
