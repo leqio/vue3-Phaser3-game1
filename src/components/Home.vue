@@ -1,29 +1,39 @@
 <template>
-    <!-- canvas容器 -->
-    <div id="game-container"></div>
+	<div class="content">
+		<button @click="toStartGamePage">开始游戏</button>
+	</div>
 </template>
 
 <script setup>
-import startGame from '@/game/index.js';
-import {onMounted, onUnmounted, ref } from 'vue';
+import { ref } from 'vue';
+import { useRouter } from "vue-router";
 
-const game = ref();
+// import {storeToRefs} from 'pinia';
+// import useCounterStore from '@/stores/counterStore/counter.js'
 
-onMounted(() => {
-    // 加载canvas
-   game.value = startGame('game-container');
-})
 
-onUnmounted(() => {
-    // 销毁游戏实例
-    if (game.value) {
-        game.value.destroy(true);
-        game.value = null;
-    }
-});
+// const countStore = useCounterStore();
+// const {count} = storeToRefs(countStore);
+ 
+const router = useRouter();
+
+const toStartGamePage = () => {
+	router.push({ path: "/startGame" })
+};
+
+
 
 </script>
 
-<style scoped>
-
+<style scoped lang="less">
+	.content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 800px;
+		height: 600px;
+		background: #ffffe5;
+		margin: 0 auto;
+	}
 </style>

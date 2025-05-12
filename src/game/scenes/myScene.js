@@ -1,17 +1,24 @@
 import Phaser from 'phaser';
 
+import sky from "/src/assets/images/sky.png"
+import ground from "/src/assets/images/platform.png"
+import star from "/src/assets/images/star.png"
+import bomb from "/src/assets/images/bomb.png"
+import dude from "/src/assets/images/dude.png"
+
 class MyScene extends Phaser.Scene{
 
     preload(){ //预加载函数，加载各种资源
-        this.load.setBaseURL("./src/assets/images/");
-        this.load.image("sky", "sky.png");
-        this.load.image("ground","platform.png");
-        this.load.image("star", "star.png");
-        this.load.image("bomb", "bomb.png");
+        // this.load.setBaseURL("/src/assets/images/");
+        this.load.image("sky", sky);
+        this.load.image("ground",ground);
+        this.load.image("star", star);
+        this.load.image("bomb", bomb);
         //this.load.image("dude", "assets/dude.png");
+        
         //spritesheet 和CSS sprite差不多，将一些图片合并放到一张大图上
         //一般这种方法用到经常需要变动的元素
-        this.load.spritesheet("dude", "dude.png", {
+        this.load.spritesheet("dude", dude, {
             frameWidth:32,// 展示的宽
             frameHeight:48 //展示的高
         })
